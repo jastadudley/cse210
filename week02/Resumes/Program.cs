@@ -13,6 +13,9 @@ class Program
         job1._endYear = 2022;
 
         Job job2 = new Job();
-        job2._jobtitle = ""
+        job2._jobtitle = "Customer Service Represenative";
+        job2._company = "The Sheild Co.";
+        job2._startYear = 2024;
+        job2._endYear = 2025;
     }
 }
