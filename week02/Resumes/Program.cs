@@ -12,10 +12,14 @@ class Program
         job1._startYear = 2019;
         job1._endYear = 2022;
 
+        job1.Display();
+
         Job job2 = new Job();
         job2._jobtitle = "Customer Service Represenative";
         job2._company = "The Sheild Co.";
         job2._startYear = 2024;
         job2._endYear = 2025;
+
+        job2.Display();
     }
 }
