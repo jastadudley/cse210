@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 
 class Program
@@ -21,10 +22,15 @@ class Program
             Console.WriteLine("5. Quit");
             Console.WriteLine("--------------------------");
 
+            choice = Console.ReadLine();
+
             if (choice=="1")
             {
+                string prompt = promptGenerator.GetRandomPrompt();
                 Console.Write($"{prompt}");
                 Console.WriteLine(">>> ");
+                string responce = Console.ReadLine();
+
                 string date = DateTime.Now.ToShortDateString();
 
                 Entry newEntry = new Entry(date, prompt, responce);
@@ -35,17 +41,25 @@ class Program
             {
                 Console.WriteLine("Here are your past entrys:");
                 journal.DisplayAll();
+                
             }
 
             if (choice=="3")
             {
                 Console.WriteLine("Please enter your new file name: ");
+                string fileName= Console.ReadLine();
+                journal.SaveToFile(fileName);
+
+                Console.WriteLine("Your journal has been saved!");
             }
 
-            else (choice=="4")
+            if (choice=="4")
             {
                 Console.WriteLine("Please enter the filename to load: ");
+                string fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
             }
+
 
 
         }
