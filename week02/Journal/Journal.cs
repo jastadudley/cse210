@@ -21,12 +21,12 @@ public class Journal
             {
                 entry.Display();
             }
-
+        }
         else
         {
             Console.WriteLine("There are no journal entrys to show");
         }
-        }
+
     }
 
     public void SaveToFile(string file)
