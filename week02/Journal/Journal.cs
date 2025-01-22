@@ -33,7 +33,7 @@ public class Journal
     {
         if (_entries == null || _entries.Count == 0)
         {
-            Console.WriteLine("There are no journal entrys to save.");
+            Console.WriteLine("There are no journal entries to save.");
             return;
         }
         using (StreamWriter writer = new StreamWriter(file))
@@ -42,7 +42,7 @@ public class Journal
             {
                 writer.WriteLine($"{entry._date} | {entry._promptText} | {entry._entryText}");
             }
-        Console.WriteLine("The journal prompt has been saved sucessfully!");
+        Console.WriteLine("The journal prompt has been saved successfully!");
         }
     }
 
