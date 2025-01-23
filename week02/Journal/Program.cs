@@ -10,6 +10,7 @@ class Program
 
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
+        QuoteGenerator quoteGenerator = new QuoteGenerator(); //this is my creative addition
 
         string choice;
         do
@@ -20,6 +21,7 @@ class Program
             Console.WriteLine("3. Save Journal to a file");
             Console.WriteLine("4. Load file to journal");
             Console.WriteLine("5. Quit");
+            Console.WriteLine("6. Quote of the day.");//this is my creative addition
             Console.WriteLine("--------------------------");
 
             choice = Console.ReadLine();
@@ -58,6 +60,14 @@ class Program
                 Console.WriteLine("Please enter the filename to load: ");
                 string fileName = Console.ReadLine();
                 journal.LoadFromFile(fileName);
+            }
+
+            if (choice=="6")//this is my creative addition
+            {
+                string quote = quoteGenerator.GetRandomQuote();
+                Console.Write($"Ponder this quote for insperation: {quote}");
+                Console.WriteLine(">>> ");
+                
             }
 
 
