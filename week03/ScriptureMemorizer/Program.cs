@@ -8,26 +8,69 @@ class Program
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
 
-        Reference reference =new Reference ("Mark 12:30-31",3,5,6);
-        Scripture scripture = new Scripture ("And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.")
+        Reference reference =new Reference ("Mark 12:30-31",12,30,31);
+        Scripture scripture = new Scripture ("And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.");
+
+        Console.WriteLine("Choose a scripture youd like to memorise:");
+        Console.WriteLine(" ");
+        Console.WriteLine("1. ");
+        Console.WriteLine("2. ");
+        Console.WriteLine("3. ");
+        Console.WriteLine("4. ");
+
+        string input = Console.ReadLine();
+
+        if (input = '1')
+        {
+
+        }
+
+        elseif (input = '2')
+        {
+
+        }
+
+        elseif (input = '3')
+        {
+
+        }
+
+        elseif (input = '4')
+        {
+
+        }
+
+
 
         while (true)
         {
-            Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
-
+            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine("Press enter to continue or type 'quit' to finish. To upload a different scripture type 'upload': ");
             string input = Console.ReadLine();
 
             if (input == "quit")
             {
                 Console.Clear();
-                Console.WriteLine("");
                 break;
             }
         }
         Console.Clear();
+        scripture.HideRandomeWords(3);
+
+        if (scripture.IsCompleatlyHidden())
+        {
+            Console.WriteLine(scripture.GetDisplayText());
+            break;
+        }
+
+
+        public class Upload
+        {
 
 
 
+        }
+        
 
 
         public class Scripture
@@ -139,7 +182,7 @@ class Program
                 _startVerse = verse;
                 _endVerse = -1;
             }
-            public Reference(string book, int chapter, int verse) //creative addition for user's own scripture upload.
+            public Reference(string book, int chapter, int verse) 
             {
                 _book = book;
                 _chapter = chapter;
