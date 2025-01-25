@@ -15,9 +15,7 @@ class Program
         {
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
 
-
             string input = Console.ReadLine();
-
 
             if (input == "quit")
             {
@@ -26,7 +24,6 @@ class Program
                 break;
             }
         }
-
         Console.Clear();
 
 
@@ -49,7 +46,6 @@ class Program
                     _words.Add(new Word(word));
                 }
             }
-
             public void HideRandomeWords(int numberToHide)
             {
                 Random random = new Random();
@@ -65,7 +61,6 @@ class Program
                     }
                 }
             }
-
             public string GetDisplayText()
             {
                 string displayText = _reference.GetDisplayText() + " ";
@@ -77,7 +72,6 @@ class Program
                 return displayText.Trim();
 
             }
-
             public bool IsCompleatlyHidden()
             {
                 foreach (Word word in _words)
@@ -89,19 +83,42 @@ class Program
                 }
                 return true;
             }
-
-
         }
 
 
 
 
 
-
-
-        public class World
+        public class Word
         {
+            private string _text;
+            private bool _isHidden;
 
+            public Word (string text)
+            {
+                _text = text;
+                _isHidden = false;
+            }
+            public void Hide()
+            {
+                _isHidden = true;
+            }
+            public void Show()
+            {
+                _isHidden = false;
+            }
+            public bool IsHidden()
+            {
+                return _isHidden;
+            }
+            public string GetDisplayText()
+            {
+                if (_isHidden)
+                {
+                    return new string('_', _text.Length);
+                }
+                return _text;
+            } 
         }
 
 
@@ -122,7 +139,6 @@ class Program
                 _startVerse = verse;
                 _endVerse = -1;
             }
-
             public Reference(string book, int chapter, int verse) //creative addition for user's own scripture upload.
             {
                 _book = book;
@@ -130,7 +146,6 @@ class Program
                 _startVerse = verse;
                 _endVerse = endVerse;
             }
-
             public string GetDisplayText()
             {
                 if (_endVerse == 1)
@@ -142,12 +157,6 @@ class Program
                     return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
                 }
             }
-
-
-
         }
-
-
     }
-
 }
