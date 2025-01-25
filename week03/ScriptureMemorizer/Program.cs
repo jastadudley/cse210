@@ -8,38 +8,36 @@ class Program
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
 
-        Reference reference =new Reference ("Mark 12:30-31",12,30,31);
-        Scripture scripture = new Scripture ("And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.");
-
         Console.WriteLine("Choose a scripture youd like to memorise:");
         Console.WriteLine(" ");
-        Console.WriteLine("1. ");
-        Console.WriteLine("2. ");
-        Console.WriteLine("3. ");
-        Console.WriteLine("4. ");
+        Console.WriteLine("1. Mark 12:30-31");
+        Console.WriteLine("2. Luke 6:27-28");
+        Console.WriteLine("3. Matthew 7:1-3");
+        Console.WriteLine("4. John 8:7");
 
-        string input = Console.ReadLine();
+        string choice = Console.ReadLine();
+        Scripture selectedScripture;
 
-        if (input = '1')
+        if (choice == "1")
         {
-
+            Reference reference =new Reference ("Mark 12:30-31",12,30,31);
+            selectedScripture = new Scripture ("And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.");
         }
-
-        elseif (input = '2')
+        else if (choice == "2")
         {
-
+            Reference reference =new Reference ("Luke 6:27-28",6,27,28);
+            selectedScripture = new Scripture ("But I say unto you which hear, Love your enemies, do good to them which hate you, Bless them that curse you, and pray for them which despitefully use you. ");
         }
-
-        elseif (input = '3')
+        else if (choice == "3")
         {
-
+            Reference reference =new Reference ("Matthew 7:1-3",7,1,3);
+            selectedScripture = new Scripture ("Judge not, that ye be not judged. For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again. And why beholdest thou the mote that is in thy brother's eye, but considerest not the beam that is in thine own eye? ");
         }
-
-        elseif (input = '4')
+        else if (choice == "4")
         {
-
+            Reference reference =new Reference ("John 8:7",8,7);
+            selectedScripture = new Scripture ("So when they continued asking him, he lifted up himself, and said unto them, He that is without sin among you, let him first cast a stone at her.");
         }
-
 
 
         while (true)
@@ -62,15 +60,6 @@ class Program
             Console.WriteLine(scripture.GetDisplayText());
             break;
         }
-
-
-        public class Upload
-        {
-
-
-
-        }
-        
 
 
         public class Scripture
