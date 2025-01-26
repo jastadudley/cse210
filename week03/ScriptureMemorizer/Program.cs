@@ -6,7 +6,6 @@ namespace ScriptureMemorizer
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
@@ -47,7 +46,6 @@ namespace ScriptureMemorizer
                 return;
             }
 
-
             while (true)
             {
                 Console.WriteLine(selectedScripture.GetDisplayText());
@@ -69,140 +67,6 @@ namespace ScriptureMemorizer
                     break;
                 }
             }
-        }
-
-
-        public class Scripture
-        {
-            private Reference _reference;
-            private List<Word> _words;
-        
-            public Scripture (Reference reference, string text)
-            {
-                _reference = reference;
-                _words = new List<Word>();
-
-                string[] wordArray = text.Split( ' ');
-                foreach (string word in wordArray)
-                {
-                    _words.Add(new Word(word));
-                }
-            }
-            public void HideRandomWords(int numberToHide)
-            {
-                Random random = new Random();
-                int hiddenCount = 0;
-
-                while (hiddenCount < numberToHide)
-                {
-                    int index = random.Next(_words.Count);
-                    if (! _words[index].IsHidden())
-                    {
-                        _words[index].Hide();
-                        hiddenCount++;
-                    }
-                }
-            }
-            public string GetDisplayText()
-            {
-                string displayText = _reference.GetDisplayText() + ": ";
-
-                foreach (Word word in _words)
-                {
-                displayText += word.GetDisplayText() + " ";
-                }
-
-                return displayText.Trim();
-            }
-            public bool IsCompleatlyHidden()
-            {
-                foreach (Word word in _words)
-                {
-                    if (!word.IsHidden())
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-
-
-
-        public class Word
-        {
-            private string _text;
-            private bool _isHidden;
-
-            public Word (string text)
-            {
-                _text = text;
-                _isHidden = false;
-            }
-            public void Hide()
-            {
-                _isHidden = true;
-            }
-            public void Show()
-            {
-                _isHidden = false;
-            }
-            public bool IsHidden()
-            {
-                return _isHidden;
-            }
-            public string GetDisplayText()
-            {
-                if (_isHidden)
-                {
-                    return new string('_', _text.Length);
-                }
-                return _text;
-            } 
-        }
-
-
-
-
-
-        public class Reference
-        {
-            private string _book;
-            private int _chapter;
-            private int _startVerse;
-            private int _endVerse;
-
-            public Reference(string book, int chapter, int verse)
-            {
-                _book = book;
-                _chapter = chapter;
-                _startVerse = verse;
-                _endVerse = -1;
-            }
-            public Reference(string book, int chapter, int startVerse, int endVerse) 
-            {
-                _book = book;
-                _chapter = chapter;
-                _startVerse = startVerse;
-                _endVerse = endVerse;
-            }
-            public string GetDisplayText()
-            {
-                string result = "";
-
-                if (_endVerse == -1) // Single-verse case
-                {
-                    result = $"{_book} {_chapter}:{_startVerse}";
-                }
-                else // Multiple-verse case
-                {
-                    result = $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
-                }
-
-                return result;
-            }
-
-
         }
     }
 }
