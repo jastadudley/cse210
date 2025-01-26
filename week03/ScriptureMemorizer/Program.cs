@@ -23,22 +23,22 @@ namespace ScriptureMemorizer
 
             if (choice == "1")//This is my creative addition
             {
-                Reference reference =new Reference ("Mark 12:30-31",12,30,31);
+                Reference reference =new Reference ("Mark",12,30,31);
                 selectedScripture = new Scripture (reference,"And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.");
             }
             else if (choice == "2")//This is my creative addition
             {
-                Reference reference =new Reference ("Luke 6:27-28",6,27,28);
+                Reference reference =new Reference ("Luke",6,27,28);
                 selectedScripture = new Scripture (reference,"But I say unto you which hear, Love your enemies, do good to them which hate you, Bless them that curse you, and pray for them which despitefully use you. ");
             }
             else if (choice == "3")//This is my creative addition
             {
-                Reference reference =new Reference ("Matthew 7:1-3",7,1,3);
+                Reference reference =new Reference ("Matthew",7,1,3);
                 selectedScripture = new Scripture (reference,"Judge not, that ye be not judged. For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again. And why beholdest thou the mote that is in thy brother's eye, but considerest not the beam that is in thine own eye? ");
             }
             else if (choice == "4")//This is my creative addition
             {
-                Reference reference =new Reference ("John 8:7",8,7);
+                Reference reference =new Reference ("John",8,7);
                 selectedScripture = new Scripture (reference,"So when they continued asking him, he lifted up himself, and said unto them, He that is without sin among you, let him first cast a stone at her.");
             }
             if (selectedScripture == null)
@@ -105,14 +105,14 @@ namespace ScriptureMemorizer
             }
             public string GetDisplayText()
             {
-                string displayText = " ";
+                string displayText = _reference.GetDisplayText() + ": ";
+
                 foreach (Word word in _words)
                 {
-                    displayText += word.GetDisplayText() + " ";
+                displayText += word.GetDisplayText() + " ";
                 }
 
-                return _reference.GetDisplayText() + " " + displayText.Trim();
-
+                return displayText.Trim();
             }
             public bool IsCompleatlyHidden()
             {
@@ -188,15 +188,21 @@ namespace ScriptureMemorizer
             }
             public string GetDisplayText()
             {
-                if (_endVerse == -1)
+                string result = "";
+
+                if (_endVerse == -1) // Single-verse case
                 {
-                    return $"{_book} {_chapter}:{_startVerse}";
+                    result = $"{_book} {_chapter}:{_startVerse}";
                 }
-                else
+                else // Multiple-verse case
                 {
-                    return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+                    result = $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
                 }
+
+                return result;
             }
+
+
         }
     }
 }
