@@ -7,6 +7,15 @@ class Program
     {
         Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
 
+        List<Video> Videos = new List<Video>();
+
+        for (int i = 0; i < 4; i++)
+        {
+            string title = videoTitles[random.Next(videoTitle.Count)];
+
+
+        }
+
         List<string> videoTitles = new List<string>
         {
             "BeautyLand by Marie-Hellen Bertino-- Book Review",
