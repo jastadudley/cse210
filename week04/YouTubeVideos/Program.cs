@@ -40,7 +40,7 @@ class Program
         {
             string title = videoTitles[random.Next(videoTitles.Count)];
             string author = authors[random.Next(authors.Count)];
-            int length = random.Next(30, 601);
+            length = random.Next(30, 601);
 
             Video video = new Video(title, author, length);
 
@@ -55,7 +55,7 @@ class Program
 
         foreach (Video vid in videos)
         {
-            vid.Display();
+            vid.DisplayVideoInfo();
         }
     }
 }

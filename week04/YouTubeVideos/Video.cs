@@ -28,12 +28,12 @@ public class Video
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"Author: {_author}");
         Console.WriteLine($"Legnth of video: {_legnth}");
-        Console.WriteLine($"Number of Video Comments: {_comments}");
+        Console.WriteLine($"Number of Video Comments: {_comments.Count}");
         Console.WriteLine($"Comments:");
 
         foreach (Comment comment in _comments)
         {
-            Console.WriteLine($"-{comment.GetCommenterName}: '{comment.GetCommentText}'");
+            Console.WriteLine($"-{comment.GetCommenterName()}: '{comment.GetCommentText()}'");
         }
     }
 }
