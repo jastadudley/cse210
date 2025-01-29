@@ -2,23 +2,22 @@ using System.Reflection.Metadata.Ecma335;
 using System.Transactions;
 
 namespace YouTubeVideos;
-public class Video
+public class Comment
 {
-    private string commentersName;
-    private string commentText;
+    private string _commentersName;
+    private string _commentText;
 
     public Comment(string commenterName, string commentText)
     {
-        _commenterName = commenterName;
-        _commentText = commenterText;
-
+        _commentersName = commenterName;
+        _commentText = commentText;
     }
     public string GetCommenterName()
     {
-        return _commenterName;
+        return _commentersName;
     }
     public string GetCommentText()
     {
-        return _commenterText;
+        return _commentText;
     }
 }
