@@ -1,4 +1,6 @@
 using System;
+using System.Net;
+using System.Reflection;
 using YouTubeVideos;
 
 class Program
@@ -12,9 +14,11 @@ class Program
         for (int i = 0; i < 4; i++)
         {
             string title = videoTitles[random.Next(videoTitle.Count)];
-
-
+            string author = authors[random.Next(author.Count)];
+            int legnth = Random.Next(30,601);
         }
+
+        Video video = new Video(AssemblyTitleAttribute, Authorization, 
 
         List<string> videoTitles = new List<string>
         {
