@@ -29,9 +29,10 @@ class Program
             "Tamberin D.",
             "Mikayla C.",
             "Anastacia T."
-
         }
 
+        Random random = new Random();
+        int length = random.Next(30, 601);
 
 
     }
