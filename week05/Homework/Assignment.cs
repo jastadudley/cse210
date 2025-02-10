@@ -11,9 +11,8 @@ public class Homework
         _topic = topic;
     }
 
-    public string GetSummery()
+    public string GetSummary()
     {
-        return _studentName;
-        return _topic;
+        return $"{_studentName} - {_topic}";
     }
 }
