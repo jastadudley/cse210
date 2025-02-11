@@ -1,4 +1,4 @@
-namespace Homework;
+using Homework;
 
 public class WritingAssignment : Assignment
 {
@@ -9,13 +9,8 @@ public class WritingAssignment : Assignment
     {
         _title = title;
     }
-    public string GetStudentName()
-    {
-        return _studentName;
-    }
     public string GetWritingInformation()
     {
-        return $"{_title} by {GetStudentName}";
+        return $"{_title} by {base.GetStudentName()}";
     }
-
 }
