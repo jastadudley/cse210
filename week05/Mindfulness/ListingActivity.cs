@@ -1,1 +1,1 @@
-using Activity;
+namespace Mindfulness;

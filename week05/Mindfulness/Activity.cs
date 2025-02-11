@@ -1,14 +1,11 @@
-
-
-using System.Runtime.CompilerServices;
-
+namespace Mindfulness;
 public class Activity
 {
     private string _name;
     private string _description;
-    private string _duration;
+    private int _duration;
 
-    public Activity(string name, string description, string duration)
+    public Activity(string name, string description, int duration)
     {
         _name = name;
         _description = description;
@@ -22,15 +19,21 @@ public class Activity
         Console.WriteLine($"Please prepare to focus and relax as we load your activity...");
     }
 
-    public vaoid DisplayEndingMessage()
+    public void DisplayEndingMessage()
     {
-        Console.WriteLine("Congradulations, you have compleated your session.");
-        Console.WriteLine($"");
+        Console.WriteLine("Congratulations, you have compleated your session.");
+        Console.WriteLine($"You have spent {_duration} seconds practicing mindfulness.");
+        Console.WriteLine("Take a moment to ground yourself back into your body before continuing your day.");
     }
     
     public void PauseAnnimation()
     {
-        return ;
+        for (int i = 15; i > 0; i --)
+        {
+            Console.Write("...Loading");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
     }
 
 
