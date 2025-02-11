@@ -1,10 +1,10 @@
 namespace Homework;
 
-public class WrightigAssignment : Assignment
+public class WritingAssignment : Assignment
 {
     private string _title;
     
-    public WritingAssignment(string student name, string topic, string title)
+    public WritingAssignment(string studentName, string topic, string title)
         :base (studentName, topic)
     {
         _title = title;
