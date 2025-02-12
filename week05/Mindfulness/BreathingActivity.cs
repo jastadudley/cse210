@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace Mindfulness;
+namespace Mindfulness
 {
     public class BreathingActivity : Activity
     {
@@ -16,7 +16,7 @@ namespace Mindfulness;
             DisplayStartingMessage();
 
             int secondsElasped = 0;
-            while (secondsElasped < duration)
+            while (secondsElasped < GetDuration())
             {
                 Console.WriteLine("Breath in...");
                 for (int i = 3; i > 0; i--)

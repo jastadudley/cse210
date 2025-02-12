@@ -12,6 +12,11 @@ public class Activity
         _duration = duration;
     }
 
+    public int GetDuration()
+    {
+        return _duration;
+    }
+
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"You have chosen {_name}.");
