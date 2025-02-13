@@ -8,18 +8,23 @@ namespace Mindfulness
     {
         privite List<string> prompts = new List<string>
         {
-
-
+            "Think of a time when you were afrade to do the right thing.",
+            "Think of a time when you had to overcome something really difficult.",
+            "Think of a time when you helpped someone in need.",
+            "Think of a time when you saw someone being truly selfles."
         };
-        private list<string> questions = new list <string>
+
+        private Listst<string> questions = new list <string>
         {
+            "What about this experience made it memorable?",
+            "What did you learn about yourself through this experience?",
+            "How did you feel once it was compleate?",
+            "How can this experience make you a better person for tomorrow?",
 
         };
-
         public ReflectionActivity()
-            base : ("Refelction Activity", "blah blah")
+            base : ("This is the Reflection activity.", "This activity will help you reflect on a time when you had to preactice stregnth or resilience." 5)
         {
-
         }
 
         public void RunReflectionActivity()
@@ -31,10 +36,14 @@ namespace Mindfulness
             Console.WriteLine($"Prompt: {chosenPrompt}");
 
             int secondsElasped = 0;
-            while (secondsElasped< GetDuration())
+            while (secondsElasped < GetDuration())
             {
-                string question = questions
+                string question = questions[go.Next(questions.Count)];
+                Console.WriteLine(question);
+                PauseAnnimation();
+                secondsElasped += 5;
             }
+            DisplayEndingMessage();
         }
     }
 
