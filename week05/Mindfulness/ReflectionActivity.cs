@@ -6,7 +6,7 @@ namespace Mindfulness
 {
     public class ReflectionActivity : Activity
     {
-        privite List<string> prompts = new List<string>
+        private List<string> prompts = new List <string>
         {
             "Think of a time when you were afrade to do the right thing.",
             "Think of a time when you had to overcome something really difficult.",
@@ -14,7 +14,7 @@ namespace Mindfulness
             "Think of a time when you saw someone being truly selfles."
         };
 
-        private Listst<string> questions = new list <string>
+        private List<string> questions = new List<string>
         {
             "What about this experience made it memorable?",
             "What did you learn about yourself through this experience?",
@@ -23,16 +23,16 @@ namespace Mindfulness
 
         };
         public ReflectionActivity()
-            base : ("This is the Reflection activity.", "This activity will help you reflect on a time when you had to preactice stregnth or resilience." 5)
-        {
-        }
-
+           :base( "Reflection activity.", 
+            "This activity will help you reflect on a time when you had to preactice stregnth or resilience.",
+            5 )
+        {}
         public void RunReflectionActivity()
         {
-            DisplayStartingMessage;
+            DisplayStartingMessage();
 
             Random go = new Random();
-            string chosenPrompt = prompts[go.Next(prompts.count)];
+            string chosenPrompt = prompts[go.Next(prompts.Count)];
             Console.WriteLine($"Prompt: {chosenPrompt}");
 
             int secondsElasped = 0;
