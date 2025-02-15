@@ -33,7 +33,7 @@ public class Activity
     
     public void PauseAnnimation()
     {
-        for (int i = 15; i > 0; i --)
+        for (int i = 10; i > 0; i --)
         {
             Console.Write("...Loading");
             Thread.Sleep(1000);

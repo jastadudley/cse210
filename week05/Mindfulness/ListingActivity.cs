@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 namespace Mindfulness
 {
-    private class ListingActivity : Activity
+    public class ListingActivity : Activity
     {
         private List<string> prompts = new List<string>()
         {
@@ -13,7 +13,7 @@ namespace Mindfulness
             "What are 10 things you are greatful for today?"
         };
         public ListingActivity()
-        : base ("ListeningActivity","This Activity will help you slow down and listen.", 5 )
+        :base("ListeningActivity","This Activity will help you slow down and listen.", 5 )
         {}
         public void RunListeningActivity()
         {
@@ -29,8 +29,8 @@ namespace Mindfulness
             while(secondsElapsed < GetDuration())
             {
                 Console.WriteLine("What else? ");
-                string responce = Console.ReadLine();
-                responses.Add(responce);
+                string userInput = Console.ReadLine();
+                response.Add(userInput);
                 secondsElapsed =+ 5;
             }
             Console.WriteLine($"You have listed {response.Count} intems!");

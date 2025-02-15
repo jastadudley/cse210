@@ -8,8 +8,8 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
 
-        BreathingActivity testBreathing = new BreathingActivity();
-        testBreathing.RunBreathingActivity();
+        ListingActivity testListing = new ListingActivity();
+        testListing.RunListeningActivity();
         
     }
 }
