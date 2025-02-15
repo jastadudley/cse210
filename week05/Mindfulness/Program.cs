@@ -18,26 +18,27 @@ class Program
             Console.WriteLine("3.Listing Activity");
             Console.WriteLine("Or enter 4 to Quit");
 
-            string choice = ConsoleReadLine();
+            string choice = Console.ReadLine();
 
 
-            choice
+            switch (choice)
             {
-                "1":
+                case "1":
                 BreathingActivity breathing = new BreathingActivity();
                 breathing.RunBreathingActivity();
 
-                "2":
+                case "2":
                 ReflectionActivity reflection = new ReflectionActivity();
+                reflection.RunReflectionActivity();
 
-
-                "3":
+                case "3":
                 ListingActivity listing = ListingActivity();
+                listing.RunListeningActivity();
 
-                "4":
+                case "4":
                 running = false;
-                Consol.WriteLine("Goodbye!");
-
+                Console.WriteLine("Goodbye!");
+                break;
             }
         }
     }
