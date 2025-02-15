@@ -25,11 +25,14 @@ namespace Mindfulness
         public ReflectionActivity()
            :base( "Reflection activity.", 
             "This activity will help you reflect on a time when you had to preactice stregnth or resilience.",
-            5 )
+            15)
         {}
         public void RunReflectionActivity()
         {
+            Console.WriteLine();
             DisplayStartingMessage();
+            Thread.Sleep(8000);
+            Console.WriteLine();
 
             Random go = new Random();
             string chosenPrompt = prompts[go.Next(prompts.Count)];
@@ -43,6 +46,7 @@ namespace Mindfulness
                 PauseAnnimation();
                 secondsElasped += 5;
             }
+            Thread.Sleep(1000);
             DisplayEndingMessage();
         }
     }

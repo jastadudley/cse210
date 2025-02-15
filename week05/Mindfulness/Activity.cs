@@ -14,7 +14,6 @@ public class Activity
 
     public int GetDuration()
     {
-        Console.WriteLine($"DEBUG: GetDuration() returning {_duration}");
         return _duration;
     }
 
@@ -28,16 +27,18 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Congratulations, you have compleated your session.");
+        Thread.Sleep(2000);
         Console.WriteLine($"You have spent {_duration} seconds practicing mindfulness.");
         Console.WriteLine("Take a moment to ground yourself back into your body before continuing your day.");
+        Thread.Sleep(4000);
     }
     
     public void PauseAnnimation()
     {
-        for (int i = 4; i > 0; i --)
+        for (int i = 15; i > 0; i --)
         {
-            Console.Write("...Loading");
-            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(2000);
         }
         Console.WriteLine();
     }

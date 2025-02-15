@@ -4,10 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine();
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
+
         bool running = true;
         while (running)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Please make a selection from the menu:");
             Console.WriteLine("1.Breathing Activity");
             Console.WriteLine("2.Reflection Activity");
@@ -35,10 +39,12 @@ class Program
 
                 case "4":
                 running = false;
-                Console.WriteLine("Goodbye!");
+                Console.WriteLine();
+                Console.WriteLine("Untill your next mindful moment, Namaste.");
                 break;
 
                 default:
+                    Console.WriteLine();
                     Console.WriteLine("Invalind choice, please make a selection between 1-4");
                     break;
             }
