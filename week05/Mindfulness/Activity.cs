@@ -14,6 +14,7 @@ public class Activity
 
     public int GetDuration()
     {
+        Console.WriteLine($"DEBUG: GetDuration() returning {_duration}");
         return _duration;
     }
 

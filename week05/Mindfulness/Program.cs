@@ -39,6 +39,7 @@ class Program
                 break;
 
                 default:
+                    Console.WriteLine("Invalind choice, please make a selection between 1-4");
                     break;
             }
         }
