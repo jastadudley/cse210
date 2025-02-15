@@ -35,7 +35,7 @@ namespace Mindfulness
             string chosenPrompt = prompts[go.Next(prompts.Count)];
             Console.WriteLine($"Prompt: {chosenPrompt}");
 
-            int secondsElasped = 0;
+            int secondsElasped = -5;
             while (secondsElasped < GetDuration())
             {
                 string question = questions[go.Next(questions.Count)];
@@ -46,20 +46,4 @@ namespace Mindfulness
             DisplayEndingMessage();
         }
     }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
