@@ -4,30 +4,17 @@ namespace Shapes
 {
     public class Square : Shape
     {
-        private string _side;
+        private double _side;
 
-        public Square(string side)
+        public Square(double side, string color)
         :base(color)
         {
             _side = side;
         }
 
-
-        override GetAre()
+        public override double GetArea()
         {
             return _side * _side;
         }
-
-
-
-
-
-
     }
-
-
-
-
-
-
 }
