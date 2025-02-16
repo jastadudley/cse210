@@ -1,26 +1,33 @@
 using System;
+using System.Collections.Generic;
 
-class Program
+namespace Shapes
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the Shapes Project.");
-
-
-        private List<Shapes> shapes = new List<Shapes>();
-
-
-        shapes.Add(new Square(5,"Red"));
-        shapes.Add(new Square(9,"Pink"));
-        shapes.Add(new Square(2, "Blue"));
-
-
-
-        foreach(Shape shape in shapes)
+        static void Main(string[] args)
         {
-            Console.WriteLine($"Color:{shape.Getcolor()}   Area:{shape.GetArea()}");
+            Console.WriteLine("Hello World! This is the Shapes Project.");
+            private List<Shape> shapes = new List<Shape>();
+
+            shapes.Add(new Square(5,"Red"));
+            shapes.Add(new Square(9,"Pink"));
+            shapes.Add(new Square(2, "Purple"));
+
+            shapes.Add(new Rectangle(7,3,"Pink"));
+            shapes.Add(new Rectangle(8,12,"White"));
+            shapes.Add(new Rectangle(7,3,"Red"));
+
+            shapes.Add(new Circle(3,"White"));
+            shapes.Add(new Circle(6,"Pink"));
+            shapes.Add(new Circle(8,"Red"));
 
 
+
+            foreach(Shape shape in shapes)
+            {
+                Console.WriteLine($"Color: {shape.GetColor()}   Area: {shape.GetArea()}");
+            }
         }
-    }
+    }    
 }

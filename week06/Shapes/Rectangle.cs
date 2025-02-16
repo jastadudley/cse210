@@ -6,11 +6,11 @@ namespace Shapes
         private double _height;
         private double _width;
 
-        public Rectangle(double height, double width, string color)
+        public Rectangle(double width, double height, string color)
         :base(color)
         {
-            _height = height;
             _width = width;
+            _height = height;
         }
 
         public override double GetArea()
