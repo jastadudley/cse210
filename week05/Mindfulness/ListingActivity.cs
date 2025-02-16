@@ -43,19 +43,11 @@ namespace Mindfulness
                 response.Add(userInput);
                 secondsElapsed =+ 5;
             }
+            
             Console.WriteLine($"You have listed a total of {response.Count} intems!");
             Console.WriteLine("There is so much to be greatful for.");
             Thread.Sleep(4000);   
         }
     }
-
-
-
-
-
-
-
-
-
 }
 

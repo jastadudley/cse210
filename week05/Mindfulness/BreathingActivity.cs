@@ -6,10 +6,10 @@ namespace Mindfulness
     public class BreathingActivity : Activity
     {
         public BreathingActivity()
-        : base ("This Breathing Activity.", "This activity will help you relax by guiding you through slow breathing. Clear your mind. For best results breath in for 4 counts, hold for 3, out for 5 counts.", 36)
-
-        {
-        }
+        : base ("This Breathing Activity.", 
+        "This activity will help you relax by guiding you through slow breathing. Clear your mind. For best results breath in for 4 counts, hold for 3, out for 5 counts.", 
+        36)
+        {}
 
         public void RunBreathingActivity()
         {

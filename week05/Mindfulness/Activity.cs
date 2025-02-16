@@ -24,11 +24,6 @@ public class Activity
         Console.WriteLine($"Please prepare to focus and relax as we load your activity...");
     }
 
-
-
-
-
-
     private static List<string> quotes = new List<string>()//MY CREATIVE ADDITION
         {
             "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.— Gautama Buddha",//MY CREATIVE ADDITION
@@ -37,6 +32,7 @@ public class Activity
             "When there is no desire, all things are at peace.- Laozi, Tao Te Ching",//MY CREATIVE ADDITION
             "Flow with whatever may happen, and let your mind be free: Stay centered by accepting whatever you are doing. This is the ultimate.- Zhuangzi"//MY CREATIVE ADDITION
         };
+        
     public static void DisplayMindfulQuote()//MY CREATIVE ADDITION
     {
         Random rand = new Random();//MY CREATIVE ADDITION
@@ -44,12 +40,6 @@ public class Activity
         Console.WriteLine(selectedQuote);//MY CREATIVE ADDITION
         Console.WriteLine();//MY CREATIVE ADDITION
     }
-
-
-
-
-
-
 
     public void DisplayEndingMessage()
     {
@@ -69,6 +59,4 @@ public class Activity
         }
         Console.WriteLine();
     }
-
-
 }

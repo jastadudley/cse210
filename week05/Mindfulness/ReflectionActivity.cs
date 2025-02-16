@@ -20,7 +20,6 @@ namespace Mindfulness
             "What did you learn about yourself through this experience?",
             "How did you feel once it was compleate?",
             "How can this experience make you a better person for tomorrow?",
-
         };
         public ReflectionActivity()
            :base( "Reflection activity.", 
