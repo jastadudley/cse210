@@ -8,7 +8,8 @@ namespace Shapes
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World! This is the Shapes Project.");
-            private List<Shape> shapes = new List<Shape>();
+
+            List<Shape> shapes = new List<Shape>();
 
             shapes.Add(new Square(5,"Red"));
             shapes.Add(new Square(9,"Pink"));
@@ -26,8 +27,11 @@ namespace Shapes
 
             foreach(Shape shape in shapes)
             {
-                Console.WriteLine($"Color: {shape.GetColor()}   Area: {shape.GetArea()}");
+                Console.WriteLine($"Color: {shape.GetColor()}  Area: {shape.GetArea()}");
             }
+
+        
+
         }
     }    
 }
