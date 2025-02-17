@@ -46,15 +46,27 @@ namespace EternalQuest
             Goal newGoal = null;//DONT FORGET MEE!!!!
             if (choice==1)
             {
-
+                newGoal = new SimpleGoal(name, points);
             }
             if(choice==2)
             {
-
+                newGoal = new EternalGoal(name, points);
             }
             if (choice==3)
             {
+                Console.Write("For a Checklist Goal specifically, how many goals will you be creating: ");
+                int target = int.Parse(Console.ReadLine());
 
+                Console.WriteLine("And how many bonus points will you recive when you mark the Checklist Goal as compleatly done: ");
+                int bonusPoints = int.Parse(Console.ReadLine());
+
+
+                newGoal = new ChecklistGoal(name, points, target, bonusPoints);
+            }
+            if(newGoal != null)
+            {
+                _goals.Add(newGoal);
+                Console.WriteLine("Your goal has been added sucessfully! Time to get to work.");
             }
             else
             {
@@ -68,11 +80,24 @@ namespace EternalQuest
             {
                 Console.WriteLine($"{ i + 1 }. {_goals[i].GetName()}");
             }
-            Console.WriteLine("Enter the number of your selection: ");
+            Console.WriteLine("Enter the number of the goal you compleated: ");
+            int index = int.Parse(Console.ReadLine())- 1;
+
+            if(index >= 0 && index < _goals.Count)
+            {
+                _goals[index].RecordEvent();
+                _score += _goals[index].GetPoints();
+                Console.WriteLine($"Goal recorded! Your total score is now: {_score}");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, thats not a valid input.");
+            }
         }
 
         public void LoadGoals()
         {
+            Console.WriteLine("Please enter the filename that you would like to load from: ");
 
         }
     }
