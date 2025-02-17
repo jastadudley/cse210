@@ -8,29 +8,19 @@ namespace EternalQuest
         private bool _isComplete;
 
 
-
         public Goal(string goal, int points, bool isComplete)
         {
             _goal = goal;
             _points = points;
             _isComplete = isComplete;
         }
+        public abstract string GetDetailsString();
 
+        public abstract void RecordEvent();
 
-
-
-        public GetDetailsString();
-
-        public RecordEvent();
-
-        public IsComplete()
+        public bool IsComplete()
         {
-
+            return _isComplete;
         }
-
     }
-
-
-
-    
 }
