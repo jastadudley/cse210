@@ -4,27 +4,18 @@ namespace EternalQuest
     public class EternalGoal : Goal
     {
         public EternalGoal(string name, int points)
-        :base(goal, points, false)
+        :base(name, points, false)
         {
-            
         }
 
         public override string GetDetailsString()
         {
-            Console.WriteLine($"You gained {GetPoints()} points for {GetPoints()}!");
+            return $"[ {(IsComplete() ? "X" : " ")} ] {GetName()} ({GetPoints()} pts)";
         }
-        
 
         public override void RecordEvent()
         {
-
+            Console.WriteLine($"You gained {GetPoints()} points for {GetName()}!");
         }
-
-
-
     }
-
-
-
-    
 } 
