@@ -6,7 +6,7 @@ namespace EternalQuest
         private List<Goal> _goals = new List<Goal>();
         private int _score;
 
-        public GoalManager(string goals, int score)
+        public GoalManager()
         {
             _goals = new List<Goal>();
             _score = 0;
@@ -15,6 +15,7 @@ namespace EternalQuest
         public void DisplayScore()
         {
             Console.WriteLine($" Your current score is {_score} points.");
+            Console.WriteLine();
         }
         public void DisplayGoals()
         {
@@ -34,6 +35,7 @@ namespace EternalQuest
             Console.WriteLine("2. An Eternal Goal");
             Console.WriteLine("3. A Checklist Goal");
             Console.WriteLine("Enter the number of your selection: ");
+            Console.WriteLine();
 
             int choice = int.Parse(Console.ReadLine());
 
@@ -54,7 +56,7 @@ namespace EternalQuest
             }
             if (choice==3)
             {
-                Console.Write("For a Checklist Goal specifically, how many goals will you be creating: ");
+                Console.Write("How many times will you need to compleate this goal: ");
                 int target = int.Parse(Console.ReadLine());
 
                 Console.WriteLine("And how many bonus points will you recive when you mark the Checklist Goal as compleatly done: ");
@@ -67,16 +69,19 @@ namespace EternalQuest
             {
                 _goals.Add(newGoal);
                 Console.WriteLine("Your goal has been added sucessfully! Time to get to work.");
+                Console.WriteLine();
+                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine("Sorry, thats not a valid input.");
+                Console.WriteLine();
             }
         }
         public void RecordEvent()
         {
             Console.WriteLine("What goal can we mark off your list?");
-            for (int i = 0; i > _goals.Count; i++)
+            for (int i = 0; i < _goals.Count; i++)
             {
                 Console.WriteLine($"{ i + 1 }. {_goals[i].GetName()}");
             }
@@ -87,11 +92,13 @@ namespace EternalQuest
             {
                 _goals[index].RecordEvent();
                 _score += _goals[index].GetPoints();
-                Console.WriteLine($"Goal recorded! Your total score is now: {_score}");
+
+                Console.WriteLine($"Goal recorded! Your total score is now{_score}");
             }
             else
             {
                 Console.WriteLine("Sorry, thats not a valid input.");
+                Console.WriteLine();
             }
         }
 
@@ -119,7 +126,8 @@ namespace EternalQuest
                     }
                     else if (type == "EternalGoal")
                     {
-                        _goals.Add(new EternalGoal(name, points));
+                        int timesCompleted = int.Parse(parts[3]);
+                        _goals.Add(new EternalGoal(name, points, timesCompleted));
                     }
                     else if (type == "ChecklistGoal")
                     {
@@ -131,11 +139,12 @@ namespace EternalQuest
                 }
 
                 Console.WriteLine("Your goals have uploaded sucessfully!");
+                Console.WriteLine();
             }
             else 
             {
-                Console.WriteLine("We're sorr, that filename was not found.");
-
+                Console.WriteLine("We're sorry, that filename was not found.");
+                Console.WriteLine();
             }
         }
     }
