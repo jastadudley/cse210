@@ -1,4 +1,5 @@
 namespace Mindfulness;
+using System.Media;
 public class Activity
 {
     private string _name;
@@ -52,10 +53,13 @@ public class Activity
     
     public void PauseAnnimation()
     {
-        for (int i = 15; i > 0; i --)
+        string[] spinner = {"|","/","--","\\"};
+
+        for (int i = 0; i < 60; i ++)
         {
-            Console.Write(".");
-            Thread.Sleep(2000);
+            Console.Write(spinner[i % 4]);
+            Thread.Sleep(250);
+            Console.Write("\b");
         }
         Console.WriteLine();
     }

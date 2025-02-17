@@ -40,7 +40,7 @@ class Program
                 case "4":
                 running = false;
                 Console.WriteLine();
-                Activity.DisplayMindfulQuote();
+                Activity.DisplayMindfulQuote();//This is my creative addition!
                 Thread.Sleep(4000);
                 Console.WriteLine("Untill your next mindful moment, Namaste.");
                 break;

@@ -30,7 +30,7 @@ namespace Mindfulness
         {
             Console.WriteLine();
             DisplayStartingMessage();
-            Thread.Sleep(8000);
+            Thread.Sleep(4000);
             Console.WriteLine();
 
             Random go = new Random();

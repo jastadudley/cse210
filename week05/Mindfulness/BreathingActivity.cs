@@ -15,7 +15,8 @@ namespace Mindfulness
         {
             Console.WriteLine();
             DisplayStartingMessage();
-            Thread.Sleep(9000);
+            Thread.Sleep(2000);
+            PauseAnnimation();
 
             int secondsElasped = 0;
             while (secondsElasped < GetDuration())
