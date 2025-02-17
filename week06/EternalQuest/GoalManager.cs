@@ -73,7 +73,7 @@ namespace EternalQuest
                 Console.WriteLine("Sorry, thats not a valid input.");
             }
         }
-        public override void RecordEvent()
+        public void RecordEvent()
         {
             Console.WriteLine("What goal can we mark off your list?");
             for (int i = 0; i > _goals.Count; i++)
@@ -98,7 +98,45 @@ namespace EternalQuest
         public void LoadGoals()
         {
             Console.WriteLine("Please enter the filename that you would like to load from: ");
+            string fielname = Console.ReadLine();
 
+            if(File.Exists(fielname))
+            {
+                string[] lines = File.ReadAllLines(fielname);
+                _goals.Clear();
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(",");
+                    string type = parts[0];
+                    string name = parts[1];
+                    int points = int.Parse(parts[2]);
+
+                    if (type == "SimpleGoal")
+                    {
+                        _goals.Add(new SimpleGoal(name, points));
+
+                    }
+                    else if (type == "EternalGoal")
+                    {
+                        _goals.Add(new EternalGoal(name, points));
+                    }
+                    else if (type == "ChecklistGoal")
+                    {
+                        int target = int.Parse(parts[3]);
+                        int bonusPoints = int.Parse(parts[4]);
+                        int timesCompleted = int.Parse(parts[5]);
+                        _goals.Add(new ChecklistGoal(name, points, target, bonusPoints));
+                    }
+                }
+
+                Console.WriteLine("Your goals have uploaded sucessfully!");
+            }
+            else 
+            {
+                Console.WriteLine("We're sorr, that filename was not found.");
+
+            }
         }
     }
 }
