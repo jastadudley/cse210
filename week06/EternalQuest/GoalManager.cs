@@ -45,7 +45,7 @@ namespace EternalQuest
             Console.Write("And how many points shall you recive when you mark this goal compleated: ");
             int points = int.Parse(Console.ReadLine());
 
-            Goal newGoal = null;//DONT FORGET MEE!!!!
+            Goal newGoal = null;
             if (choice==1)
             {
                 newGoal = new SimpleGoal(name, points);

@@ -48,6 +48,7 @@ namespace EternalQuest
                 else if (choice == 6)
                 {
                     Console.WriteLine("Good luck on your goals!");
+                    Console.WriteLine("Goodbye");
                     break;
                 }
                 else

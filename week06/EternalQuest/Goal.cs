@@ -18,7 +18,7 @@ namespace EternalQuest
         {
             return _goal;
         }
-        public int GetPoints()
+        public virtual int GetPoints()
         {
             return _points;
         }

@@ -22,7 +22,22 @@ namespace EternalQuest
 
         public override void RecordEvent()
         {
-            //DONT FORGET ME!! >:(
+            _timesCompleted++;
+            Console.WriteLine($"You gained {GetPoints()} points for {GetName()}! Progress: {_timesCompleted}/{_target}");
+            
+            if (_timesCompleted == _target)
+            {
+                Console.WriteLine($"You have now compleated {GetName()} and earned a bonus of {_bonusPoints} points!");
+            }
+        }
+
+        public override int GetPoints()
+        {
+            if (_timesCompleted == _target)
+            {
+                return base.GetPoints() + _bonusPoints;
+            }
+            return base.GetPoints();
         }
     }
 }
