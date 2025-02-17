@@ -7,7 +7,6 @@ namespace EternalQuest
         :base(goal, points, false)
         {
         }
-        _isComplete = true;
 
         public override string GetDetailsString()
         {
@@ -16,7 +15,7 @@ namespace EternalQuest
 
         public override void RecordEvent()
         {
-            _isComplete = true;
+            SetComplete();
         }
     }
 }
