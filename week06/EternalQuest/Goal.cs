@@ -14,11 +14,22 @@ namespace EternalQuest
             _points = points;
             _isComplete = isComplete;
         }
+
+        public string GetName()
+        {
+            return _goal;
+        }
+
+        public int GetPoints()
+        {
+            return _points;
+        }
+
         public abstract string GetDetailsString();
 
         public abstract void RecordEvent();
 
-        public bool IsComplete()
+        private bool IsComplete()
         {
             return _isComplete;
         }

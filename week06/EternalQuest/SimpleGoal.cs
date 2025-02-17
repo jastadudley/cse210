@@ -7,21 +7,16 @@ namespace EternalQuest
         :base(goal, points, false)
         {
         }
+        _isComplete = true;
 
         public override string GetDetailsString()
         {
-            
+            return $"[ {(IsComplete() ? "X" : " ")} ] {GetName()} ({GetPoints()} pts)";
         }
 
-
-        public bool RecordEvent()
+        public override void RecordEvent()
         {
-            return isComplete = true;
+            _isComplete = true;
         }
-
     }
-
-
-
-    
 }
