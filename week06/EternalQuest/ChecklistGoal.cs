@@ -27,7 +27,7 @@ namespace EternalQuest
             
             if (_timesCompleted == _target)
             {
-                Console.WriteLine($"You have now compleated {GetName()} and earned a bonus of {_bonusPoints} points!");
+                Console.WriteLine($"You have now completed {GetName()} and earned a bonus of {_bonusPoints} points!");
             }
         }
 

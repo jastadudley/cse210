@@ -24,10 +24,10 @@ namespace EternalQuest
                 Console.WriteLine();
                 Console.WriteLine("Please make a selection from our menu:");
                 Console.WriteLine("--------------------------------------");
-                Console.WriteLine("1. Greate A New Goal");
+                Console.WriteLine("1. Create A New Goal");
                 Console.WriteLine("2. List Current Goals");
                 Console.WriteLine("3. Mark A Goal As Accomplished");
-                Console.WriteLine("4. Veiw Current Score");
+                Console.WriteLine("4. View Current Score");
                 Console.WriteLine("5. Load Goals From File");
                 Console.WriteLine("6. To Exit the program");
                 Console.WriteLine();

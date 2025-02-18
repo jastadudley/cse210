@@ -43,7 +43,7 @@ namespace EternalQuest
             Console.Write("Enter a name for your new goal: ");
             string name = Console.ReadLine();
 
-            Console.Write("And how many points shall you recive when you mark this goal compleated: ");
+            Console.Write("And how many points shall you receive when you mark this goal compleated: ");
             int points = int.Parse(Console.ReadLine());
 
             Goal newGoal = null;

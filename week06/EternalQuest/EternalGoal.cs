@@ -12,7 +12,7 @@ namespace EternalQuest
 
         public override string GetDetailsString()
         {
-            return $"[ {(IsComplete() ? "X" : " ")} ] {GetName()} ({GetPoints()} pts)--Compleated {_timesCompleted} times";
+            return $"[ {(IsComplete() ? "X" : " ")} ] {GetName()} ({GetPoints()} pts)--Completed {_timesCompleted} times";
         }
 
         public override void RecordEvent()
