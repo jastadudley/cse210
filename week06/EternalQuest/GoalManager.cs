@@ -1,4 +1,5 @@
 using System;
+using System.Media;
 namespace EternalQuest
 {
     public class GoalManager
@@ -93,7 +94,7 @@ namespace EternalQuest
                 _goals[index].RecordEvent();
                 _score += _goals[index].GetPoints();
 
-                Console.WriteLine($"Goal recorded! Your total score is now{_score}");
+                Console.WriteLine($"Goal recorded! Your total score is now {_score}");
             }
             else
             {
@@ -101,7 +102,6 @@ namespace EternalQuest
                 Console.WriteLine();
             }
         }
-
         public void LoadGoals()
         {
             Console.WriteLine("Please enter the filename that you would like to load from: ");
@@ -136,15 +136,37 @@ namespace EternalQuest
                         int timesCompleted = int.Parse(parts[5]);
                         _goals.Add(new ChecklistGoal(name, points, target, bonusPoints));
                     }
-                }
+                    }
 
-                Console.WriteLine("Your goals have uploaded sucessfully!");
-                Console.WriteLine();
-            }
+                        Console.WriteLine("Your goals have uploaded sucessfully!");
+                        Console.WriteLine();
+                    }
             else 
             {
                 Console.WriteLine("We're sorry, that filename was not found.");
                 Console.WriteLine();
+            }
+        }
+        public void CheckLevelUp()//My creative addition!
+        {
+            int level = _score / 1000;
+
+            string LevelName = level switch
+            {
+                1 => "Beginner Goal Baby",
+                2 =>"Mediocre Mid Goal Person",
+                3 =>"Pro Goal Crusher Bro",
+                4 =>"Master of Productivity",
+                5 =>"Goal Destroying Wizard (w/ a really cool hat)",
+                6 =>"Ultimate Goal Obliterator Supreme",
+                7 =>"God-Tier Productivity Overlord",
+                _ => null
+            };
+            if (LevelName != null && (_score % 1000 == 0))
+            {
+                Program.PlayChime();
+                Console.WriteLine($"You leveled up to ***{LevelName}***!");
+                Console.WriteLine($"Keep going to {_score + 1000} points to reach the next level!");
             }
         }
     }

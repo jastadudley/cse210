@@ -1,8 +1,17 @@
 using System;
+using System.Media;
 namespace EternalQuest
 {
     class Program
     {
+        public static void PlayChime()//My creative addition! Only on Windows but a fun new thing I learned :)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Beep(1000, 500);
+                    Thread.Sleep(150);
+                }
+            }
         static void Main(string[] args)
         {
             Console.WriteLine();
@@ -36,6 +45,7 @@ namespace EternalQuest
                 else if (choice == 3)
                 {
                     run.RecordEvent();
+                    run.CheckLevelUp();//My creative addition!
                 }
                 else if (choice == 4)
                 {
