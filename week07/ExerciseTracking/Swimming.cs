@@ -7,27 +7,25 @@ namespace ExcerciseTracing
         private int _laps;
 
         public Swimming(string date, int minutes, int laps)
-        :base()
+        :base(date, minutes)
         {
-            _date = date;
-            _minutes = minutes;
             _laps = laps;
         }
 
-        public void GetSpeed()
+        public override double GetSpeed()
         {
-
+            return (GetDistance() / _minutes) * 60;
     
         }
 
-        public void GetPace()
+        public override double GetPace()
         {
-
+            return _minutes / GetDistance();
         }
 
-        public void GetDistance()
+        public override double GetDistance()
         {
-
+            return (_laps * 50 / 0.62 );
         }
 
         public string GetSummery()

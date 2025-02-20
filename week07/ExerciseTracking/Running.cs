@@ -17,19 +17,19 @@ namespace ExcerciseTracing
 
         }
 
-        public void GetDistance()
+        public override double GetDistance()
         {
-
+            return _distance;
         }
 
-        public void GetSpeed()
+        public override double GetSpeed()
         {
-
+            return ( _distance / _minutes * 60) ;
         }
 
-        public void GetPace()
+        public override double GetPace()
         {
-
+           return ( _minutes / _distance ) ;
         }
 
         public string GetSummery()
