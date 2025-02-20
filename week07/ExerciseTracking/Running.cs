@@ -1,4 +1,4 @@
-namespace Activity
+namespace ExcerciseTracing
 {
     public class Running : Activity
     {
@@ -32,9 +32,9 @@ namespace Activity
 
         }
 
-        public void GetSummery()
+        public string GetSummery()
         {
-            
+
         }
 
     }
