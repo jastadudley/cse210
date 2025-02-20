@@ -1,4 +1,4 @@
-namespace ExcerciseTracing
+namespace ExerciseTracking 
 {
     public class Activity
     {

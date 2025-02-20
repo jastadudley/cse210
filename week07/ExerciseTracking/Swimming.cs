@@ -1,4 +1,4 @@
-namespace ExcerciseTracing
+namespace ExerciseTracking 
 {
     public class Swimming : Activity
     {
@@ -34,12 +34,4 @@ namespace ExcerciseTracing
             " km, speed: " + GetSpeed().ToString("0.00") + "kph, Pace: " + GetPace().ToString("0.00") + "min/km";
         }
     }
-
-
-
-
-
-
-
-    
 }

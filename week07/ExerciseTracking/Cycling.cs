@@ -1,12 +1,12 @@
-namespace ExcerciseTracing
+namespace ExerciseTracking 
 {
-    public class Cycling() : Activity
+    public class Cycling : Activity
     {
         private string _date;
         private int _minutes;
         private int _speed;
 
-        public Cycling(string _date, int minutes, int speed)
+        public Cycling(string date, int minutes, int speed)
         :base(date, minutes)
         {
             _speed = speed;
@@ -33,12 +33,4 @@ namespace ExcerciseTracing
             "miles, speed: " + GetSpeed().ToString("0.00") + " mph, Pace: " + GetPace().ToString("0.00") + "min/miles";
         }
     }
-
-
-
-
-
-
-
-    
 }
