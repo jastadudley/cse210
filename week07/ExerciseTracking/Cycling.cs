@@ -6,11 +6,9 @@ namespace ExcerciseTracing
         private int _minutes;
         private int _speed;
 
-        public Cycling(string date, int minutes, int speed)
-        :base()
+        public Cycling(string _date, int minutes, int speed)
+        :base(date, minutes)
         {
-            _date = date;
-            _minutes = minutes;
             _speed = speed;
         }
 
@@ -29,12 +27,11 @@ namespace ExcerciseTracing
             return (60 / _speed);        
             }
 
-        public string GetSummery()
+        public string GetSummary()
         {
-            
+            return _date + "Cycling (" + _minutes + "min) - Distance: " + GetDistance().ToString("0.00") + 
+            "miles, speed: " + GetSpeed().ToString("0.00") + " mph, Pace: " + GetPace().ToString("0.00") + "min/miles";
         }
-
-
     }
 
 
