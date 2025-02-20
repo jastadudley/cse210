@@ -12,8 +12,7 @@ namespace ExerciseTracking
 
         public override double GetSpeed()
         {
-            return (GetDistance() / _minutes) * 60;
-    
+            return(GetDistance()/_minutes)*60;
         }
 
         public override double GetPace()
@@ -23,7 +22,7 @@ namespace ExerciseTracking
 
         public override double GetDistance()
         {
-            return (_laps * 50 / 0.62 );
+            return(_laps*50/0.62);
         }
 
         public string GetSummary()

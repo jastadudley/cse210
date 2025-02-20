@@ -27,10 +27,9 @@ namespace ExerciseTracking
             return 0;
         }
 
-        public string GetSummery()
+        public string GetSummary()
         {
-            return $"{_date} {GetType()Name} ({_minutes} min)";
+            return $"{_date} {GetType().Name} ({_minutes} min)";
         }
     }
-
 }
