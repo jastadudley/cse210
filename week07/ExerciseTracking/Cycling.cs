@@ -25,7 +25,7 @@ namespace ExerciseTracking
             return (60 / _speed);        
             }
 
-        public string GetSummary()
+        public override string GetSummary()
         {
             return _date + "Cycling (" + _minutes + "min) - Distance: " + GetDistance().ToString("0.00") + 
             "miles, speed: " + GetSpeed().ToString("0.00") + " mph, Pace: " + GetPace().ToString("0.00") + "min/miles";

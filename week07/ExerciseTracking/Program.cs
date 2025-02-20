@@ -5,7 +5,9 @@ namespace ExerciseTracking
     {
         static void Main(string[] args)
         {
+            Console.WriteLine();
             Console.WriteLine("Hello World! This is the ExerciseTracking Project.");
+            Console.WriteLine();
 
             Running run1 = new Running ("03 Nov 2022", 30, 3);
             Cycling cycle1 = new Cycling ("04 Nov 2022", 45, 15);
