@@ -2,11 +2,9 @@ namespace ExerciseTracking
 {
     public class Running : Activity
     {
-        private string _date;
-        private int _minutes;
         private double _distance;
 
-        public Running(string date, int minutes, double distance)
+        public Running(string date, int minutes, int distance)
         :base(date, minutes)
         {
             _distance = distance;

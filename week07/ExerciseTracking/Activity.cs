@@ -2,8 +2,8 @@ namespace ExerciseTracking
 {
     public class Activity
     {
-        private string _date;
-        private int _minutes;
+        protected string _date;
+        protected int _minutes;
     
 
         public Activity(string date, int minutes)

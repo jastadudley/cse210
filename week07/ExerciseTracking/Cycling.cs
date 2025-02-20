@@ -2,8 +2,6 @@ namespace ExerciseTracking
 {
     public class Cycling : Activity
     {
-        private string _date;
-        private int _minutes;
         private int _speed;
 
         public Cycling(string date, int minutes, int speed)
@@ -14,7 +12,7 @@ namespace ExerciseTracking
 
         public override double GetDistance()
         {
-            return _speed * (_minutes *60 );
+            return _speed * (_minutes / 60 );
         }
 
         public override double GetSpeed()
